@@ -7,6 +7,29 @@ import tr.com.maze.wall.Wall;
 
 public class MazeFactory {
 	
+	private static MazeFactory _instance;
+	
+	public static MazeFactory INSTANCE(){
+		if(_instance == null){
+			//Get from env
+			String mazeStyle = "bombed";
+			
+			if(mazeStyle.equals("bombed")){
+				_instance = new BombedMazeFactory();
+			}else if(mazeStyle.equals("enchanted")){
+				_instance = new EnchantedMazeFactory();
+			}else{
+				_instance = new MazeFactory();
+			}
+		}
+		return _instance;
+	}
+	
+	
+	protected MazeFactory(){
+		
+	}
+	
 	//Default implementation of the all factories that will extend from MazeFactory.
 	public Wall createWall(){
 		return new Wall();

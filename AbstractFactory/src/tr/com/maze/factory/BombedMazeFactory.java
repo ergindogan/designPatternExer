@@ -6,6 +6,9 @@ import tr.com.maze.wall.BombedWall;
 import tr.com.maze.wall.Wall;
 
 public class BombedMazeFactory extends MazeFactory {
+	
+	protected BombedMazeFactory(){
+	}
 
 	@Override
 	public Wall createWall() {

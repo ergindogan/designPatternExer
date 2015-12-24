@@ -6,7 +6,10 @@ import tr.com.maze.room.EnchantedRoom;
 import tr.com.maze.room.Room;
 
 public class EnchantedMazeFactory extends MazeFactory {
-
+	
+	protected EnchantedMazeFactory(){
+	}
+	
 	@Override
 	public Room createRoom() {
 		return new EnchantedRoom();
